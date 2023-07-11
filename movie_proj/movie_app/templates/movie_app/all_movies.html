@@ -1,0 +1,19 @@
+{% extends 'movie_app/base.html'%}
+
+{% block title %} ВСЕ ФИЛЬМЫ {% endblock %}
+
+
+{% block content %}
+    <li><a href=" admin/ ">Admin panel</a> </li>
+    <br>
+    <h2> Список всех фильмов </h2>
+    <ul>
+        {% for movie in movies %}
+            <li><a href="{{ movie.get_url }}">{{movie.name}}</a> </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <li><a href=" directors/ ">Directors List</a> </li>
+    <li><a href=" actors/ ">Actors List</a> </li>
+
+{% endblock %}
